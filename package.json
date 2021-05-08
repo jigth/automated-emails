@@ -6,13 +6,13 @@
   "scripts": {
     "dev": "ts-node ./src/index.ts",
     "build": "rimraf ./build && tsc",
-    "test": "jest tests",
+    "test": "jest",
+    "test:watch": "jest --watchAll",
     "start": "npm run build && node build/index.js",
     "coverage": "jest --coverage"
-
   },
   "keywords": [],
-  "author": "",
+  "author": "jigth",
   "license": "ISC",
   "devDependencies": {
     "@types/jest": "^26.0.23",
@@ -26,5 +26,9 @@
   },
   "jest": {
     "preset": "ts-jest"
+  },
+  "dependencies": {
+    "nodemailer": "^6.6.0",
+    "sib-api-v3-typescript": "^2.2.1"
   }
 }

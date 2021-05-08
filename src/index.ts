@@ -1,12 +1,2 @@
-export function ok() : string {
-    return "OK";
-}
-
-export function ko() : string {
-    return "K.O >>>";
-}
-
-module.exports = {
-    ok,
-    ko
-}
+// TODO: Implement the server init code in this file.
+// TODO: Implement the API routes and make them use the functions of the mailer component

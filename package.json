@@ -28,6 +28,7 @@
     "preset": "ts-jest"
   },
   "dependencies": {
+    "dotenv": "^9.0.0",
     "nodemailer": "^6.6.0",
     "sib-api-v3-typescript": "^2.2.1"
   }

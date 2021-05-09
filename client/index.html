@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Automated Email Sender</title>
+</head>
+<body>
+	<h1>Automated Email Sender!  📧🤖📧</h1>
+	<p>Send Emails with the automated email server!</p>
+
+	<form method="POST" action="">
+		<!-- Sender data -->
+		<h3>From:</h3>
+		<div class="form-row">
+			<label for="sender-name" class="row-label">Name:</label>	
+			<input id="sender-name" type="text" class="row-input" placeholder="Your name here...">
+		</div>
+		<!-- Receiver data -->
+		<h3>To:</h3>
+		<div class="form-row">
+			<label for="receiver-name" class="row-label">Name:</label>	
+			<input id="receiver-name" type="text" class="row-input" placeholder="Receiver Name">
+		</div>
+		<div class="form-row">
+			<label for="sender-email" class="row-label">Email:</label>	
+			<input id="sender-email" type="email" class="row-input" placeholder="Receiver Email">
+		</div>
+		<!-- Message -->
+		<h3>Email Data:</h3>
+		<div class="form-row">
+			<label for="subject" class="row-label">Subject:</label><br />
+			<input id="subject" type="text" class="row-input" placeholder="Email Subject">
+		</div>
+		<div class="form-row">
+			<label for="message" class="row-label">Message:</label><br />
+			<textarea id="message" class="row-input" placeholder="Write your message here..."></textarea>
+		</div>
+		<input id="submit-button" type="submit" name="Send" onclick="alert('Your message has been sent')">
+	</form>
+</body>
+</html>

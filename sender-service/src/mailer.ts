@@ -1,31 +1,31 @@
-const SibApiV3Sdk = require('sib-api-v3-typescript');
-
-export class Mailer {
-    apiInstance: any;
+export class SendgridMailer {
+    emailClient: any;
     apiKey: string;
 
-    constructor() {
-        this.apiKey = process.env.API_KEY || "No api key was provided!";
-        console.log(this.apiKey);
+    constructor(emailClient: any) {
+            this.apiKey = process.env.API_KEY || "No api key was provided!";
+            this.emailClient = emailClient;
+            this.emailClient.setApiKey(this.apiKey);
     }
 
-    async initClient() {
-        this.apiInstance = new SibApiV3Sdk.AccountApi();
     
-        // Configure API key authorization: apiKey
-        let apiKey = this.apiInstance.authentications['apiKey'];
-        apiKey.apiKey = this.apiKey;
-    
+    async sendMessageSendgrid(fromEmail: string, toEmail: string, subject: string, 
+                      messagePlainText: string, messageHTML?: string): Promise<void> {
+
+        const msg = {
+            to: toEmail,
+            from: fromEmail,
+            subject,
+            text: messagePlainText,
+            html: messageHTML
+        };
+
         try {
-            const data: string = await this.apiInstance.getAccount();
-            return true;    
+            await this.emailClient.send(msg);
+            console.log("Email sent");
         } catch (error) {
-            return false;
+            console.error(error);
+            throw Error("Message could not be sent due to an internal error");
         }
-    }
-    
-    // TODO: Implement this function to send a mail to a specific contact (or maybe a list of them)
-    sendMessage(): string {
-        return "{}";
     }
 }

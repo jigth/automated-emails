@@ -3,12 +3,13 @@ require('dotenv').config();
 const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 4550;
+const cors = require('cors');
 
 import { SendgridMailer } from "./mailer";
 
 // Middleware
 app.use(express.json());
-
+app.use(cors());
 
 // Functions
 const sendMessage = async (from: string, to: string, subject: string,  
@@ -17,7 +18,9 @@ const sendMessage = async (from: string, to: string, subject: string,
     const sgMail = require('@sendgrid/mail')
     const mailer: SendgridMailer = new SendgridMailer(sgMail);
 
+    console.log("WILL SEND MESSAGE");
     await mailer.sendMessageSendgrid(from, to, subject, text, html);
+    console.log("Message SENT :D");
 }
 
 

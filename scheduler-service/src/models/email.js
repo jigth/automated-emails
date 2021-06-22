@@ -22,6 +22,11 @@ const emailSchema = new Schema({
         type: String,
         required: true
     },
+    'expireDate': {
+        type: Date,
+        required: true
+    },
+
 });
 
 module.exports = model('Email', emailSchema);

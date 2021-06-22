@@ -16,7 +16,7 @@ router.route('/schedule-email')
     })
     .post(async (req, res) => {
         console.log(req.body);
-        const { from, to, subject, message, htmlMessage } = req.body;
+        const { from, to, subject, message, htmlMessage, expireDate } = req.body;
 
         // Schedule email
         try {
@@ -26,6 +26,7 @@ router.route('/schedule-email')
                 subject,
                 message,
                 htmlMessage,
+                expireDate,
                 currStatus: 'PENDING'  // Default: 'PENDING'. 'SENT' when it's sent.
             });
             res.json({ newEmail });

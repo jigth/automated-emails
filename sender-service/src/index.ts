@@ -1,4 +1,3 @@
-// TODO: Implement the API routes and make them use the functions of the mailer component
 require('dotenv').config();
 const express = require('express');
 const app = express();

@@ -33,6 +33,5 @@ async function sendEmail(backendURL) {
             console.log(error);
             alert(`OOPS THERE WAS AN ERROR ${error}`);
         });
-
 }
 

@@ -1,0 +1,46 @@
+<!-- Sender data -->
+<div class="form-row">
+    <label for="sender-email" class="row-label"><strong>From Email:</strong></label>	
+    <input id="sender-email" type="email" class="row-input form-control" placeholder="Your email here...">
+    <small class="text-danger">
+        Must be an email registered in the 'Sendgrid account' used by this service
+    </small>
+</div>
+<!-- Receiver data -->
+<div class="form-row">
+    <label for="receiver-email" class="row-label"><strong>To Email:</strong></label>	
+    <input id="receiver-email" type="email" class="row-input form-control" placeholder="Receiver Email">
+</div>
+<!-- Message -->
+<div class="form-row">
+    <label for="subject" class="row-label"><strong>Subject:</strong></label><br />
+    <input id="subject" type="text" class="row-input form-control" placeholder="Email Subject">
+</div><br />
+
+<div class="form-row">
+    <label for="message" class="row-label"><strong>Message:</strong></label><br />
+    <textarea id="message" class="row-input form-control" placeholder="Your message goes here..."></textarea>
+</div><br />
+<div class="form-row">
+    <label for="html-message" class="row-label"><strong>HTML Message</strong>
+        <span style="color: salmon;">
+            (OPTIONAL):
+        </span>
+    </label><br />
+    <textarea id="html-message" class="row-input form-control" placeholder="Your HTML message goes here..."></textarea>
+</div>
+<br />
+<input type="radio" id="one-email" name="sendOptions" value="One" />
+<label for="one-email">One Email</label><br />
+<input type="radio" id="three-minutes" name="sendOptions" value="ThreeMin" />
+<label for="three-minutes">3 emails (1 per minute)</label><br />
+<input type="radio" id="three-hours" name="sendOptions" value="ThreeHours" />
+<label for="three-hours">3 emails (1 per hour)</label>
+<br />
+<br />
+<button 
+    id="send-button"
+    class="btn btn-primary"
+    onclick="processEmail('http://localhost:4550/send',
+                          'http://localhost:4551/schedule-email');"
+>Send</button>

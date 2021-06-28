@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Automated Email Sender</title>
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+            integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+            crossorigin="anonymous"
+        />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    </head>
+
+    <body>
+            <div class="container w-50">
+                <h1 class="text-primary my-4">Automated Email Sender!  📧🤖📧</h1>
+                <p>Send Emails with the <em>Automated Email Sender</em>!</p>
+
+                <div class="container p-3 bg-dark text-light">
+                    {{>_form}}
+                </div>
+            </div>
+        <script src="/js/helpers/dates.js"></script>
+        <script src="/js/emails.js"></script>
+    </body>
+</html>

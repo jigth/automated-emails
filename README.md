@@ -61,11 +61,13 @@ This is used by both **The Client** and **The Scheduler Service** so it's a good
 1. From a CLI run the following commands:
 
 > cd sender-service
+>
 > npm install
 
 2. After that, create a **.env** file by copying the file **.env_sample** to **.env** and modifying its configurations to something like this:
 
 > API\_KEY=YOUR\_SENDGRID\_API\_KEY\_GOES\_HERE
+>
 > PORT=4550
 
 3. Finally, just run the service
@@ -80,12 +82,15 @@ With the **Sender Service** installed, it's a good idea to continue with the **S
 1. From a CLI run the following commands:
 
 > cd scheduler-service
+>
 > npm install
 
 2. After that, create a **.env** file by copying the file **.env_sample** to **.env** and modifying its configurations to something like this:
 
 > PORT=4551
+>
 > SENDER\_SERVICE\_API=http://localhost:4550
+>
 > CRON\_PERIODICITY=\*/30 \* \* \* \* \*
 
 3. Finally, run the service
@@ -102,13 +107,15 @@ Finally, there's the client, this part is also important but it can be changed e
 1. From a CLI run the following commands:
 
 > cd client
-
+>
 > npm install
 
 2. After that, create a **.env** file by copying the file **.env_sample** to **.env** and modifying its configurations to something like this:
 
 > CLIENT\_PORT=3000
+>
 > SENDER\_SERVICE\_API=http://localhost:4550
+>
 > SCHEDULER\_SERVICE\_API=http://localhost:4551
 
 3. Finally, run the client.
